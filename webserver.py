@@ -168,7 +168,7 @@ class webserverHandler(BaseHTTPRequestHandler):
             # self.wfile.write(output)
 
             if self.path.endswith('/edit'):
-                print('muggy CUUUUNNNTTTTT')
+          
                 ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
                 print(ctype)
                 if ctype == 'multipart/form-data':
@@ -180,7 +180,6 @@ class webserverHandler(BaseHTTPRequestHandler):
                     print(myRestaurantQuery)
 
                     if myRestaurantQuery != []:
-                        print('this is fucking working!!!!!!')
                         myRestaurantQuery.name = messagecontent[0]
                         session.add(myRestaurantQuery)
                         session.commit()
